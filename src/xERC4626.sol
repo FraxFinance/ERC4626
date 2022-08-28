@@ -88,7 +88,7 @@ abstract contract xERC4626 is IxERC4626, ERC4626 {
 
         uint32 end = ((timestamp + rewardsCycleLength) / rewardsCycleLength) * rewardsCycleLength;
 
-        if (timestamp - end < rewardsCycleLength / 10) {
+        if (end - timestamp < rewardsCycleLength / 10) {
             end += rewardsCycleLength;
         }
 
